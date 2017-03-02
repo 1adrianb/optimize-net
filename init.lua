@@ -1,4 +1,5 @@
 require 'nn'
+require 'bnn'
 
 local optnet = require 'optnet.env'
 require 'optnet.countUsedMemory'
@@ -266,7 +267,7 @@ end
 
 local reusableBuffers = {
 ['nn.SpatialConvolution'] = {{'finput','fgradInput'},{'fgradInput'}},
-['bnn.SpatialConvolution'] = {{'finput','fgradInput','columns_binary'},{'fgradInput'}},
+['bnn.SpatialConvolution'] = {{'finput','fgradInput','columns_binary'},{}},
 ['nn.SpatialConvolutionMM'] = {{'finput','fgradInput'},{'fgradInput'}},
 ['nn.Normalize'] = {{'norm','buffer','normp','_indices'},{}},
 ['nn.SpatialCrossMapLRN'] = {{'scale'},{}},
